@@ -3,16 +3,9 @@ kind: pipeline
 type: docker
 name: default
 
-
-
-
-
 steps:
-- name: greeting
-  image: ubuntu:latest
+- name: test
+  image: alpine
   commands:
-  - echo hello
-
-trigger:
-  branch:
-  - main
+  - echo "It worked!
+  
