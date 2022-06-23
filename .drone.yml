@@ -9,4 +9,5 @@ steps:
 - name: test
   image: alpine
   commands:
+  --network=host
   - echo "It worked!
