@@ -10,3 +10,5 @@ steps:
   image: alpine
   commands:
   - echo "It worked!"
+  - mkdir test
+  - cd test
