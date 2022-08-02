@@ -15,5 +15,17 @@ steps:
   
 - name: docker buildx
   image: docker:20
+  privileged: true
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+  
+  
+  environment:
+    GOOS: linux
+    GOARCH: amd64
+    DOCKER_CLI_EXPERIMENTAL: enabled
   commands:
   - docker buildx version
