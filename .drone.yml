@@ -12,3 +12,8 @@ steps:
   - echo "It worked!"
   - mkdir test
   - cd test
+  
+- name: docker buildx
+  image: docker:20
+  commands:
+  - docker buildx version
