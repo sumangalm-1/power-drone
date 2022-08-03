@@ -8,6 +8,9 @@ platform:
 steps:
 - name: test
   image: alpine
+  environment:
+    GOOS: linux
+    GOARCH: ppc64le
   commands:
   - echo "It worked!"
   - mkdir test
