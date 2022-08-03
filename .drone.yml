@@ -4,7 +4,7 @@ type: docker
 name: default
 platform:
   os: linux
-  arch: ppc64le
+  arch: arm64
 steps:
 - name: test
   image: alpine
@@ -12,20 +12,6 @@ steps:
   - echo "It worked!"
   - mkdir test
   - cd test
-  
-- name: docker buildx
-  image: docker:20
-  privileged: true
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-  
-  
-  environment:
-    GOOS: linux
-    GOARCH: amd64
-    DOCKER_CLI_EXPERIMENTAL: enabled
-  commands:
-  - docker buildx version
+  - arch
+  - uname -r
+ 
